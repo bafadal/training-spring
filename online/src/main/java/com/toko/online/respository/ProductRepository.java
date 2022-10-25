@@ -9,5 +9,5 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
   Product getProductByNamaProduct(String namaProduct);
   Product getProductByJenisProduct(String jenisProduct);
 
-  Product getProductByKodeProduct(String kodeProduct);
+  Product getProductByKodeProduct(String kodeProduct, String jenisProduct);
 }

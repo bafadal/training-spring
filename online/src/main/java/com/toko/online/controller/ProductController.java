@@ -21,7 +21,6 @@ public class ProductController {
             return null;
         }
         return ResponseEntity.ok(product);
-
     }
 
     @PostMapping("/product")

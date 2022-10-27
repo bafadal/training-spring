@@ -3,6 +3,7 @@ package com.toko.online.controller;
 import com.toko.online.model.entity.Product;
 import com.toko.online.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,8 +18,8 @@ public class ProductController {
     @GetMapping("/product")
     public ResponseEntity getProduct(){
         List<Product> product = productService.getProduct();
-        if (product.size() == 0){
-            return null;
+        if (product.size() > 0){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(product);
         }
         return ResponseEntity.ok(product);
     }

@@ -17,7 +17,11 @@ public class ProductController {
     @GetMapping("/product")
     public ResponseEntity getProduct(){
         List<Product> product = productService.getProduct();
-        return ResponseEntity.ok(product);
+        if(product.size() > 0){
+            return ResponseEntity.ok(product);
+        }else {
+            return null;
+        }
 
     }
 

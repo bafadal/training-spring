@@ -20,8 +20,8 @@ public class Product {
     private String kodeProduct;
     private int hargaProduct;
 
-    @JsonIgnore
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "product", cascade = CascadeType.ALL)
-    private Order order;
+//    @JsonIgnore
+//    @OneToOne(fetch = FetchType.LAZY, mappedBy = "product", cascade = CascadeType.ALL)
+//    private Order order;
 
 }

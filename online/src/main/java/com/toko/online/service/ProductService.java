@@ -22,8 +22,8 @@ public class ProductService {
 
     public void saveProduct(Product product){
         productRepository.save(product);
-
     }
+
     public void updateProduct(Product product, int id){
         Optional<Product> dataProduct = productRepository.findById(id);
         dataProduct.get().setNamaProduct(product.getNamaProduct());
@@ -35,6 +35,7 @@ public class ProductService {
         productRepository.delete(dataProduct.get());
     }
 
-
-
+    public Product getProductById(int id){
+        return productRepository.findById(id).get();
+    }
 }

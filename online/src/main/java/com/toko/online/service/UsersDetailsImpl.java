@@ -30,9 +30,9 @@ public class UsersDetailsImpl implements UserDetails {
   }
 
   public static UsersDetailsImpl build(Users users){
-
+    String ROLE_PREFIX = "ROLE_";
     List<GrantedAuthority> authorities = users.getRoles().stream()
-        .map(role -> new SimpleGrantedAuthority(role.getRoleName()))
+        .map(role -> new SimpleGrantedAuthority(ROLE_PREFIX+role.getRoleName()))
         .collect(Collectors.toList());
 
     return new UsersDetailsImpl(

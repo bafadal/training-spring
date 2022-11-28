@@ -18,7 +18,6 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping("/product")
-    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity getProduct(){
         List<Product> product = productService.getProduct();
         if (product.size() > 0){

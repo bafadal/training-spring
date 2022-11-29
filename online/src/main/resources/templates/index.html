@@ -18,6 +18,9 @@
                         <th>Product Type</th>
                         <th>Product Code</th>
                         <th>Product Price</th>
+                        <th>
+                            Action
+                        </th>
                     </tr>
                 </thead>
 
@@ -27,6 +30,15 @@
                         <td th:text="*{p.jenisProduct}"></td>
                         <td th:text="*{p.kodeProduct}"></td>
                         <td th:text="*{p.hargaProduct}"></td>
+                        <td>
+                            <a class="btn btn-success" th:href="@{/edit-product/{id} (id=*{p.id})}">
+                                edit
+                            </a>
+
+                            <a class="btn btn-danger" th:href="@{/delete-product/{id} (id=*{p.id})}">
+                                delete
+                            </a>
+                        </td>
                     </tr>
                 </tbody>
             </table>

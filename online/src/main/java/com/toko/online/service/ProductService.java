@@ -27,6 +27,9 @@ public class ProductService {
     public void updateProduct(Product product, int id){
         Optional<Product> dataProduct = productRepository.findById(id);
         dataProduct.get().setNamaProduct(product.getNamaProduct());
+        dataProduct.get().setHargaProduct(product.getHargaProduct());
+        dataProduct.get().setJenisProduct(product.getJenisProduct());
+        dataProduct.get().setKodeProduct(product.getKodeProduct());
         productRepository.save(dataProduct.get());
     }
     public void deleteProduct(int id){
